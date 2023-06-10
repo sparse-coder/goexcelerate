@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+    {{ range $index, $sheet := .GetXMLData }}
+    <Relationship Id="rId{{ $index }}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet{{ $index }}.xml" />
+    {{end}}
+    {{if .HasStyles}}
+    <Relationship Id="rId1000" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>
+    {{end}}
+</Relationships> 
